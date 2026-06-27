@@ -1,0 +1,51 @@
+:root {
+  --text: #ffffff;
+  --text-h: #ffffff;
+  --bg: #fff;
+  --border: #e5e4e7;
+  --code-bg: #f4f3ec;
+  --social-bg: rgba(244, 243, 236, 0.5);
+
+  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
+  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
+  --mono: ui-monospace, Consolas, monospace;
+
+  font: 18px/145% var(--sans);
+  letter-spacing: 0.18px;
+  color-scheme: light dark;
+  color: var(--text);
+  background: #18161c;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  @media (max-width: 1024px) {
+    font-size: 16px;
+  }
+}
+
+
+.section_header {
+  background-color: #18161c;
+  padding: 0.5rem;
+}
+
+.title_app{
+  text-align: center;
+  color: var(--bg);
+}
+
+
+.interest_selector{
+  text-align: center;
+  color: #fff;
+  margin: 1.5rem;
+}
+
+.interest_layout{
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
