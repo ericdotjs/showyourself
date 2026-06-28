@@ -1,7 +1,7 @@
 import L from 'leaflet'
 import 'leaflet/dist/leaflet.css';
 
-function getCoordinates(): Promise<[number, number]> {
+export function getCoordinates(): Promise<[number, number]> {
 
     return new Promise((resolve, reject) => {
         navigator.geolocation.getCurrentPosition(
@@ -22,7 +22,7 @@ function getCoordinates(): Promise<[number, number]> {
 export async function buildMap() {
     const coords: Promise<[number, number]> =  getCoordinates();
     const apiKey = import.meta.env.VITE_GEOAPIFY_API_KEY;
-    const map = L.map('map').setView(await coords, 25)
+    const map = L.map('map').setView(await coords, 18)
     const geoapifyUrl = `https://maps.geoapify.com/v1/tile/osm-bright/{z}/{x}/{y}.png?apiKey=${apiKey}`;
 
     L.tileLayer(geoapifyUrl, {

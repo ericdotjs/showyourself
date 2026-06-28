@@ -1,6 +1,6 @@
 export interface ButtonInfo{
-    category: String,
+    category: string,
     enable: Boolean,
     component?: HTMLButtonElement,
-    equivalent?: String
+    equivalent?: string
 }
