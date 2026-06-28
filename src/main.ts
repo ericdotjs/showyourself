@@ -1,29 +1,27 @@
 import './style.css'
+import {optionsInterest} from './scripts/fillOptions'
 import {createIcons, Utensils ,Coffee, ShoppingBag, Shirt, FerrisWheel, Popcorn   } from 'lucide'
-//import { setupCounter } from './counter.ts'
+import htmlContent from './templates/app.html?raw'
+import { buildMap } from './scripts/settingMap';
 
 let application_name = 'Show Yourself';
+const options = optionsInterest;
 
-document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
-<section class="section_header">
-<div class="title_app">
-<h1>${application_name}</h1>
-</div>
-</section>
-<section>
-<p>Select what do you wish to see</p>
-</section>
-<section class="interest_selector">
-<div class="interest_layout">
-<button><i data-lucide="coffee"></i></button>
-<button><i data-lucide="utensils"></i></button>
-<button><i data-lucide="shoppingBag"></i></button>
-<button><i data-lucide="Shirt"></i></button>
-<button><i data-lucide="FerrisWheel"></i></button>
-<button><i data-lucide="Popcorn"></i></button>
-</div>
-</section>
-`
+const app = document.querySelector<HTMLDivElement>('#app');
+app!.innerHTML = htmlContent
+
+const title_section =app?.querySelector('#title_app_h1');
+if(title_section)
+   title_section.textContent = application_name;
+
+const optionsLayout = document.querySelector<HTMLDivElement>('.interest_layout');
+
+options.forEach(btn => {
+  if(btn.component)
+  optionsLayout?.appendChild(btn.component)
+})
+
+buildMap();
 
 createIcons({
   icons: {
@@ -35,6 +33,4 @@ createIcons({
     Popcorn
   }
 })
-
-//setupCounter(document.querySelector<HTMLButtonElement>('#counter')!)
 

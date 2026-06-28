@@ -36,6 +36,9 @@
   color: var(--bg);
 }
 
+.interest_description{
+text-align: center;
+}
 
 .interest_selector{
   text-align: center;
@@ -48,4 +51,23 @@
   gap: 1rem;
   justify-content: center;
 }
+
+.interest_selected{
+ background-color: blue;
+}
+
+#map {
+    width: 100%;
+    height: 400px; /* O el tamaño que prefieras */
+    border-radius: 12px;
+    margin-top: 20px;
+  }
+
+  .footerSection{
+
+  }
+
+  footer{
+    text-align: center;
+  }
 
