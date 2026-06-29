@@ -1,5 +1,6 @@
 import type { ButtonInfo } from "../interfaces/ButtonInfo";
 import {GetPlaces} from './api'
+import Swal from "sweetalert2";
 
 export const optionsInterest : ButtonInfo[] = [];
 
@@ -25,9 +26,6 @@ function createOptionos() {
 
 async function selectInterest(element: HTMLButtonElement, buttonInfo: ButtonInfo) {
     console.log(buttonInfo)
-
-
-    debugger;
     if (element.id === buttonInfo.category) {
         element.classList.toggle('interest_selected')
         buttonInfo.enable = !buttonInfo.enable;
@@ -35,8 +33,23 @@ async function selectInterest(element: HTMLButtonElement, buttonInfo: ButtonInfo
         if (buttonInfo.enable) {
             uncheckOtherButtons(buttonInfo.category)
             if (buttonInfo.equivalent) {
+                try{
+                Swal.fire({
+                    title: 'loading',
+                    theme: 'dark',
+                    allowOutsideClick:false,
+                    allowEscapeKey: false,
+                    didOpen: ()  => Swal.showLoading()
+                })
                 await GetPlaces(buttonInfo.equivalent)
                 return
+                }
+                catch(error){
+                    Swal.fire('Error','Scaning error','error');
+                }
+                finally{
+                    Swal.close();
+                }
             }
         }
         else {

@@ -28,7 +28,7 @@
 
 .section_header {
   background-color: #18161c;
-  padding: 0.5rem;
+  padding: 0.2rem;
 }
 
 .title_app{
@@ -82,4 +82,13 @@ text-align: center;
   grid-template-rows: auto;
   }
 
+  .placeCard{
+    display: grid;
+  }
+
   
+
+  .placeCard
+  h3{
+  text-align: center;
+  }
