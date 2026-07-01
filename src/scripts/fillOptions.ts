@@ -35,10 +35,10 @@ async function selectInterest(element: HTMLButtonElement, buttonInfo: ButtonInfo
             if (buttonInfo.equivalent) {
                 try{
                 Swal.fire({
-                    title: 'loading',
                     theme: 'dark',
                     allowOutsideClick:false,
                     allowEscapeKey: false,
+                    text: 'Scanning ...',
                     didOpen: ()  => Swal.showLoading()
                 })
                 await GetPlaces(buttonInfo.equivalent)
@@ -62,7 +62,6 @@ async function selectInterest(element: HTMLButtonElement, buttonInfo: ButtonInfo
 }
 
 function uncheckOtherButtons(category:string){
-    debugger;
     optionsInterest.forEach(element => {
         if(element.component && element.category !== category && element.enable){
             element.component.classList.toggle('interest_selected');

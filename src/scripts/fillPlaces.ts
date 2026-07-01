@@ -34,12 +34,12 @@ function createPlaceComponent(place: Place) {
     const postcode = component.querySelector<HTMLHeadElement>("#PlacePostcode");
     const state = component.querySelector<HTMLHeadElement>("#PlaceState");
     const street = component.querySelector<HTMLHeadElement>("#PlaceStreet");
-    if (name && address && postcode && state && state && street) {
+    if (name && address /*&& postcode && state && state && street*/) {
         name.innerText = place.name;
         address.innerText = place.address;
-        postcode.innerText = place.postcode;
+        /*postcode.innerText = place.postcode;
         state.innerText = place.state;
-        street.innerText = place.street;
+        street.innerText = place.street;*/
     }
 
     return component;
