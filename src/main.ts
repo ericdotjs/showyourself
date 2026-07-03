@@ -3,7 +3,7 @@ import {optionsInterest} from './scripts/fillOptions'
 import {createIcons, Utensils ,Coffee, ShoppingBag, Shirt, FerrisWheel, Popcorn   } from 'lucide'
 import htmlContent from './templates/app.html?raw'
 import { buildMap } from './scripts/settingMap';
-
+import { drawRadiusDistance } from './scripts/distance';
 let application_name = 'Show Yourself';
 const options = optionsInterest;
 
@@ -22,6 +22,12 @@ options.forEach(btn => {
 })
 
 buildMap();
+
+/*const slider = document.querySelector("#myRange") as HTMLInputElement;
+const displayElement = document.querySelector("#rangeValue") as HTMLElement;
+if(slider && displayElement){
+  slider.addEventListener("input", () => drawRadiusDistance(slider, displayElement));
+}*/
 
 createIcons({
   icons: {
